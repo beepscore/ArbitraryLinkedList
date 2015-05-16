@@ -35,7 +35,6 @@ Problem statement gives node as Java class
 ### TODO
 Objective C references all objects as pointers e.g. (Node * )node
 Java doesn't generally do this.
-Check if uninitialized Node properties are garbage.
 
 ## Plan
 Traverse the original linked list.
