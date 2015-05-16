@@ -16,4 +16,18 @@ public class NodeTest extends TestCase {
         assertNull(node.arbitrary);
     }
 
+    public void testNodeProperties() {
+        Node curly = new Node();
+        Node larry = new Node();
+        Node moe = new Node();
+
+        String testCurlyValue = "Curly";
+        curly.value = testCurlyValue;
+        curly.next = larry;
+        curly.arbitrary = moe;
+
+        assertEquals(testCurlyValue, curly.value);
+        assertEquals(larry, curly.next);
+        assertEquals(moe, curly.arbitrary);
+    }
 }
