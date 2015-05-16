@@ -24,18 +24,18 @@ Assume arbitrary can't point to itself.
 [D].arbitrary => B
 
 ### Node class
-Problem statement gives node class as
+Problem statement gives node as Java class
 
     class Node {
         String value;
-        Node * next
-        Node * arbitrary
+        Node next
+        Node arbitrary
     }
 
 ### TODO
+Objective C references all objects as pointers e.g. (Node * )node
+Java doesn't generally do this.
 Check if uninitialized Node properties are garbage.
-Objective C lists all objects as pointers e.g. (Node * )node
-How is * reference used in Java?
 
 ## Plan
 Traverse the original linked list.
