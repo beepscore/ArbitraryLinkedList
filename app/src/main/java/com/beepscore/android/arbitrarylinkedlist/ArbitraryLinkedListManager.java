@@ -48,9 +48,7 @@ public class ArbitraryLinkedListManager {
 
             cloneOriginalProperties(originalNode, cloneNode);
 
-            if (isLastNode(originalNode)) {
-                break;
-            }
+            // Note at the last node originalNode.next == null
             originalNode = originalNode.next;
         }
         return correspondingNodes.get(startNode);
@@ -86,10 +84,6 @@ public class ArbitraryLinkedListManager {
                 correspondingNodes.put(originalNode.arbitrary, cloneNode.arbitrary);
             }
         }
-    }
-
-    public Boolean isLastNode(Node node) {
-        return node.next == null;
     }
 
 }

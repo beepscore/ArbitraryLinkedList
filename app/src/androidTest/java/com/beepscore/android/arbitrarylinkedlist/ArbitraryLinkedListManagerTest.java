@@ -91,16 +91,6 @@ public class ArbitraryLinkedListManagerTest extends TestCase {
         assertEquals(cloneNode, listManager.correspondingNodes.get(originalNode));
     }
 
-    public void testIsLastNode() {
-        Node curly = new Node();
-        curly.next = null;
-        assertTrue(listManager.isLastNode(curly));
-        Node larry = new Node();
-        curly.next = larry;
-        assertFalse(listManager.isLastNode(curly));
-        assertTrue(listManager.isLastNode(larry));
-    }
-
     public void testCloneOriginalNext() {
         Node a = new Node();
         Node b = new Node();
