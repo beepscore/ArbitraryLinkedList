@@ -165,8 +165,7 @@ public class ArbitraryLinkedListManagerTest extends TestCase {
         assertNotNull(cloneStartNode.next.next.next.arbitrary);
 
         assertEquals("A", cloneStartNode.value);
-        // TODO fixme
-        //assertEquals("C", cloneStartNode.arbitrary.value);
+        assertEquals("C", cloneStartNode.arbitrary.value);
 
         assertEquals("D", cloneStartNode.next.next.next.value);
         assertEquals("B", cloneStartNode.next.next.next.arbitrary.value);

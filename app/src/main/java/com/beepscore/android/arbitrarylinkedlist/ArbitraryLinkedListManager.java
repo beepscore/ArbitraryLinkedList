@@ -77,6 +77,12 @@ public class ArbitraryLinkedListManager {
                 cloneNode.arbitrary = correspondingNodes.get(originalNode.arbitrary);
             } else {
                 cloneNode.arbitrary = new Node();
+
+                // This fixes failing testCloneListMultipleArbitraryArbitrary
+                // However setting it elsewhere might be more readable.
+                // TODO consider moving this elsewhere
+                cloneNode.arbitrary.value = originalNode.arbitrary.value;
+
                 correspondingNodes.put(originalNode.arbitrary, cloneNode.arbitrary);
             }
         }
