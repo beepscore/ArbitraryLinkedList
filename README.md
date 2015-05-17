@@ -32,12 +32,7 @@ Problem statement gives node as Java class
         Node arbitrary
     }
 
-### TODO
+### Notes
 Objective C references all objects as pointers e.g. (Node * )node
-Java doesn't generally do this.
+Java doesn't use this notation.
 
-## Plan
-Traverse the original linked list.
-At each node, make a clone node.
-Set cloned node properties. However the "next" and node.arbitrary may not exist yet.
-Don't instantiate next node or arbitrary node if it already exists.
