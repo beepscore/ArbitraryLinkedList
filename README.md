@@ -18,10 +18,12 @@ Shows "next" link as edge to "next" node.
 Arbitrary can point to nothing.
 Assume arbitrary can't point to itself.
 
-### Example Structure
-[A] -> [B] -> [C] -> [D]
-[A].arbitrary => C
-[D].arbitrary => B
+### Example Linked List Structure
+Arrows -> show "next" links
+
+    [a] -> [b] -> [c] -> [d]
+    [a].arbitrary == c
+    [d].arbitrary == b
 
 ### Node class
 Problem statement gives node as Java class
@@ -31,8 +33,3 @@ Problem statement gives node as Java class
         Node next
         Node arbitrary
     }
-
-### Notes
-Objective C references all objects as pointers e.g. (Node * )node
-Java doesn't use this notation.
-
