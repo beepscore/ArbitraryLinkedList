@@ -30,28 +30,29 @@ public class ArbitraryLinkedListManager {
         }
 
         correspondingNodes = new HashMap<Node, Node>();
-
         Node originalNode = startNode;
 
         while (originalNode != null) {
-
-            Node cloneNode = null;
-            if (correspondingNodes.get(originalNode) != null) {
-                // The corresponding cloneNode already exists. Use it.
-                cloneNode = correspondingNodes.get(originalNode);
-            } else {
-                cloneNode = new Node();
-                // put cloneNode in correspondingNodes immediately to
-                // prevent accidental duplication later
-                correspondingNodes.put(originalNode, cloneNode);
-            }
-
+            Node cloneNode = getCloneNodeCorrespondingOrNew(originalNode);
             cloneOriginalProperties(originalNode, cloneNode);
-
             // Note at the last node originalNode.next == null
             originalNode = originalNode.next;
         }
         return correspondingNodes.get(startNode);
+    }
+
+    protected Node getCloneNodeCorrespondingOrNew(Node originalNode) {
+        Node cloneNode = null;
+        if (correspondingNodes.get(originalNode) != null) {
+            // The corresponding cloneNode already exists. Use it.
+            cloneNode = correspondingNodes.get(originalNode);
+        } else {
+            cloneNode = new Node();
+            // put cloneNode in correspondingNodes immediately to
+            // prevent accidental duplication later
+            correspondingNodes.put(originalNode, cloneNode);
+        }
+        return cloneNode;
     }
 
     protected void cloneOriginalProperties(Node originalNode, Node cloneNode) {
