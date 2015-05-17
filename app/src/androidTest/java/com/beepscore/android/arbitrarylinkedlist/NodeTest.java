@@ -30,4 +30,16 @@ public class NodeTest extends TestCase {
         assertEquals(larry, curly.next);
         assertEquals(moe, curly.arbitrary);
     }
+
+    public void testToStringValueNull() {
+        Node curly = new Node();
+        assertEquals("value:null", curly.toString());
+    }
+
+    public void testToString() {
+        Node curly = new Node();
+        curly.value = "Curly";
+        assertEquals("value:Curly", curly.toString());
+    }
+
 }
