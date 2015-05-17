@@ -33,7 +33,7 @@ public class ArbitraryLinkedListManager {
         Node originalNode = startNode;
 
         while (originalNode != null) {
-            Node cloneNode = getCloneNodeCorrespondingOrNew(originalNode);
+            Node cloneNode = getCloneNodeAndUpdateCorrespondingNodes(originalNode);
             cloneOriginalProperties(originalNode, cloneNode);
             // Note at the last node originalNode.next == null
             originalNode = originalNode.next;
@@ -41,7 +41,8 @@ public class ArbitraryLinkedListManager {
         return correspondingNodes.get(startNode);
     }
 
-    protected Node getCloneNodeCorrespondingOrNew(Node originalNode) {
+    protected Node getCloneNodeAndUpdateCorrespondingNodes(Node originalNode) {
+        
         Node cloneNode = null;
         if (correspondingNodes.get(originalNode) != null) {
             // The corresponding cloneNode already exists. Use it.
