@@ -120,5 +120,18 @@ public class ArbitraryLinkedListManagerTest extends TestCase {
         assertEquals("d", cloneStartNode.next.next.next.value);
     }
 
+    public void testCloneListArbitraryLinksToStart() {
+        Node startNode = getSampleListArbitraryLinksToStart();
+        Node cloneStartNode = listManager.cloneList(startNode);
+
+        assertNull(cloneStartNode.arbitrary);
+        assertNull(cloneStartNode.next.arbitrary);
+        assertNotNull(cloneStartNode.next.next.arbitrary);
+        assertNull(cloneStartNode.next.next.next.arbitrary);
+
+        assertEquals("c", cloneStartNode.next.next.value);
+        assertEquals("a", cloneStartNode.next.next.arbitrary.value);
+    }
+
 }
 
