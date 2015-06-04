@@ -13,7 +13,8 @@ public class ArbitraryLinkedListManagerTest extends TestCase {
 
     ArbitraryLinkedListManager listManager;
 
-    public void setUp() {
+    public void setUp() throws Exception {
+        super.setUp();
         listManager = new ArbitraryLinkedListManager();
     }
 
